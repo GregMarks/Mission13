@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Bowler Form";
+}
+@model  Mission13.Models.Bowler
+
+
+<div>
+
+    <h1>@ViewData["Title"]</h1>
+
+    <h3>Please enter your details, and we'll get your tour booked.</h3>
+
+    <form method="post" asp-controller="Home" asp-action="Form">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="BowlerID">BowlerID</label>
+            <input asp-for="BowlerID" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="BowlerFirstName">Bowler First Name</label>
+            <input asp-for="BowlerFirstName" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="BowlerMiddleInit">Bowler Middle Initial</label>
+            <input asp-for="BowlerMiddleInit" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="BowlerLastName">Bowler Last Name</label>
+            <input asp-for="BowlerLastName" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="BowlerAddress">Bowler Address</label>
+            <input asp-for="BowlerAddress" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="BowlerCity">Bowler City</label>
+            <input asp-for="BowlerCity" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="BowlerState">Bowler State</label>
+            <input asp-for="BowlerState" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="BowlerZip">Bowler Zip Code</label>
+            <input asp-for="BowlerZip" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="BowlerPhoneNumber">Bowler Phone Number</label>
+            <input asp-for="BowlerPhoneNumber" class="form-control" />
+        </div>
+        <br />
+        <div>
+            <input class="btn btn-primary" type="submit" value="Submit Bowler" />
+            <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="Signup">Cancel</a>
+        </div>
+    </form>
+</div>
