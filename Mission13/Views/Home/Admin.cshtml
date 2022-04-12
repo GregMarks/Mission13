@@ -4,7 +4,11 @@
 
 @model List<Bowler>
 
+
 <div style="background-color:whitesmoke">
+    <div class="row m-4 p-1 justify-content-end">
+        <a class="btn btn-primary btn-md mx-4 mr-auto" asp-controller="home" asp-action="NewBowler">Add New Bowler</a>
+    </div>
     <table class="table table-striped table-bordered">
 
         <thead>
@@ -33,6 +37,7 @@
                 <td>@b.BowlerPhoneNumber</td>
 
                 <td class="text-center"><a class=" btn btn-sm btn-primary text-dark" asp-controller="home" asp-action="edit" asp-route-bowlerid="@b.BowlerID">Edit</a></td>
+                <td class="text-center"><a class=" btn btn-sm btn-primary text-dark" asp-controller="home" asp-action="delete" asp-route-bowlerid="@b.BowlerID">Delete</a></td>
             </tr>
             }
         </tbody>

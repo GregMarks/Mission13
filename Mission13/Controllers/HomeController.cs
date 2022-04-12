@@ -47,6 +47,38 @@ namespace Mission13.Controllers
 
             return View("Confirmation");
         }
+        [HttpGet]
+        public IActionResult Delete (int bowlerid)
+        {
+            ViewBag.Page = "Delete";
+
+            var bowler = _context.Bowlers.Single(x => x.BowlerID == bowlerid);
+            return View("Delete", bowler);
+        }
+        [HttpPost]
+        public IActionResult Delete (Bowler b)
+        {
+            _context.Update(b);
+            _context.SaveChanges();
+
+            return View("Confirmation");
+        }
+
+        [HttpGet]
+        public IActionResult NewBowler()
+        {
+            return View("Add");
+        }
+        [HttpPost]
+        public IActionResult NewBowler(Bowler b)
+        {
+            _context.Update(b);
+            _context.SaveChanges();
+
+            return View("Confirmation");
+        }
+        
+
     }
 
     
