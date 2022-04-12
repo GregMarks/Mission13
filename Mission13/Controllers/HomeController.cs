@@ -31,6 +31,22 @@ namespace Mission13.Controllers
 
             return View(blah);
         }
+        [HttpGet]
+        public IActionResult Edit(int bowlerid)
+        {
+            ViewBag.Page = "Edit";
+
+            var bowler = _context.Bowlers.Single(x => x.BowlerID == bowlerid);
+            return View("Edit", bowler);
+        }
+        [HttpPost]
+        public IActionResult Edit (Bowler b)
+        {
+            _context.Update(b);
+            _context.SaveChanges();
+
+            return View("Confirmation");
+        }
     }
 
     
