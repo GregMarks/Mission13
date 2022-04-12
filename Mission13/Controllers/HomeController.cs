@@ -24,5 +24,14 @@ namespace Mission13.Controllers
 
             return View(blah);
         }
+
+        public IActionResult Admin()
+        {
+            var blah = _context.Bowlers.ToList();
+
+            return View(blah);
+        }
     }
+
+    
 }
